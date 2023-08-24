@@ -1,0 +1,52 @@
+MODULE EC_PHYS_FIELDS_MOD 
+
+USE YOE_TILE_PROP, ONLY : TETILEPROP
+USE YOE_PHYS_MWAVE, ONLY : TEPHYSMWAVE
+IMPLICIT NONE
+PRIVATE
+
+! Fields related to ECMWF physics package
+
+TYPE,PUBLIC  :: TEC_PHYS_FIELDS
+TYPE(TETILEPROP) :: YRTILEPROP
+TYPE(TEPHYSMWAVE) :: YRPHYSMWAVE
+CONTAINS
+PROCEDURE :: CREATE
+PROCEDURE :: ZERO
+PROCEDURE :: COPY
+END TYPE TEC_PHYS_FIELDS
+CONTAINS
+!============================================================================
+SUBROUTINE CREATE(SELF,YDGEOMETRY,YDDPHY)
+USE GEOMETRY_MOD , ONLY : GEOMETRY
+USE YOMDPHY      , ONLY : TDPHY
+CLASS(TEC_PHYS_FIELDS) :: SELF
+TYPE(GEOMETRY)    ,INTENT(IN)    :: YDGEOMETRY
+TYPE(TDPHY)       ,INTENT(INOUT):: YDDPHY
+
+
+
+
+END SUBROUTINE CREATE
+!============================================================================
+SUBROUTINE ZERO(SELF)
+CLASS(TEC_PHYS_FIELDS) :: SELF
+
+
+
+
+END SUBROUTINE ZERO
+!============================================================================
+
+SUBROUTINE COPY(SELF,RHS)
+CLASS(TEC_PHYS_FIELDS) :: SELF
+CLASS(TEC_PHYS_FIELDS) :: RHS
+
+
+
+
+END SUBROUTINE COPY
+!============================================================================
+
+END MODULE EC_PHYS_FIELDS_MOD
+

@@ -1,0 +1,443 @@
+MODULE GRIDPOINT_FIELDS_MIX
+
+!   Purpose
+!   -------
+!     Flexible data structure to handle grid point fields.
+
+!   Author
+!   ------
+!     Yannick Tremolet
+
+!   Modifications
+!   -------------
+!     Original    16-Jan-04
+!     M. Fisher   7-March-2012 Use DEALLOCATE_IF_ASSOCIATED
+!     M. Chrust   3-Jan-2020 Implement SELF_AXPY, DOT_PRODUCT
+! ------------------------------------------------------------------
+
+USE PARKIND1, ONLY: JPIM, JPRB
+USE YOMHOOK , ONLY: LHOOK, DR_HOOK, JPHOOK
+
+IMPLICIT NONE
+SAVE
+PRIVATE
+PUBLIC GRIDPOINT_FIELD, ALLOCATE_GRID, DEALLOCATE_GRID, &
+     & SELF_ADD, SELF_SUB, SELF_MUL, SELF_AXPY, HUGIFY_ENDGRID, CLIP_GRID, &
+     & DOT_PRODUCT
+
+! ------------------------------------------------------------------
+
+! There could be a type GRIDPOINT_STRUCT similar to what Mike has
+! done in yomwavlet and a pointer to a GRIDPOINT_STRUCT in the
+! GRIDPOINT_FIELD type.
+
+TYPE GRIDPOINT_FIELD
+  REAL(KIND=JPRB), POINTER :: GP3D(:,:,:,:)=>NULL()
+  REAL(KIND=JPRB), POINTER :: GP2D(:,:,:)=>NULL()
+  INTEGER(KIND=JPIM) :: NG3D
+  INTEGER(KIND=JPIM) :: NG2D
+  INTEGER(KIND=JPIM) :: NPROMA
+  INTEGER(KIND=JPIM) :: NGPBLKS
+  INTEGER(KIND=JPIM) :: NFLEVG
+  INTEGER(KIND=JPIM) :: NGPTOT
+  INTEGER(KIND=JPIM) :: NGPTOTG
+  INTEGER(KIND=JPIM), POINTER :: NGRIB(:)=>NULL(), NGRIB2(:)=>NULL(), NGRIB3(:)=>NULL()
+  INTEGER(KIND=JPIM), POINTER :: NPARAMID(:)=>NULL(), NPARAMID2(:)=>NULL(), NPARAMID3(:)=>NULL()
+  REAL(KIND=JPRB), POINTER :: DIV(:,:,:)=>NULL()
+  REAL(KIND=JPRB), POINTER :: VOR(:,:,:)=>NULL()
+  REAL(KIND=JPRB), POINTER :: U(:,:,:)=>NULL()
+  REAL(KIND=JPRB), POINTER :: V(:,:,:)=>NULL()
+  REAL(KIND=JPRB), POINTER :: T(:,:,:)=>NULL()
+  REAL(KIND=JPRB), POINTER :: Q(:,:,:)=>NULL()
+  REAL(KIND=JPRB), POINTER :: O3(:,:,:)=>NULL()
+  REAL(KIND=JPRB), POINTER :: SPR(:,:)=>NULL()
+  REAL(KIND=JPRB), POINTER :: WIND(:,:,:,:)=>NULL()
+  REAL(KIND=JPRB), POINTER :: SCAL(:,:,:,:)=>NULL()
+END TYPE GRIDPOINT_FIELD
+
+! ------------------------------------------------------------------
+
+INTERFACE OPERATOR (.EQV.)
+MODULE PROCEDURE EQUIV_GRID
+END INTERFACE
+
+INTERFACE OPERATOR (.NEQV.)
+MODULE PROCEDURE NEQUIV_GRID
+END INTERFACE
+
+INTERFACE SELF_ADD  ! What we really want here is ASSIGNMENT (+=)
+MODULE PROCEDURE SELF_ADD_GP, SELF_ADD_SCAL
+END INTERFACE
+
+INTERFACE SELF_SUB  ! What we really want here is ASSIGNMENT (-=)
+MODULE PROCEDURE SELF_SUB_GP
+END INTERFACE
+
+INTERFACE SELF_MUL  ! What we really want here is ASSIGNMENT (*=)
+MODULE PROCEDURE SELF_MUL_GP, SELF_MUL_SCAL
+END INTERFACE
+
+INTERFACE SELF_AXPY
+MODULE PROCEDURE SELF_AXPY_GP
+END INTERFACE
+
+INTERFACE DOT_PRODUCT
+MODULE PROCEDURE DOT_PRODUCT_GP
+END INTERFACE
+
+! ------------------------------------------------------------------
+! ------------------------------------------------------------------
+CONTAINS
+! ------------------------------------------------------------------
+
+SUBROUTINE ALLOCATE_GRID(YDGEOMETRY,YDGRID,KG3D,KG2D,KGRIB,KPARAMID)
+USE GEOMETRY_MOD , ONLY : GEOMETRY
+
+TYPE(GEOMETRY)        ,INTENT(IN)    :: YDGEOMETRY
+TYPE (GRIDPOINT_FIELD),INTENT(OUT)   :: YDGRID
+INTEGER(KIND=JPIM)    ,INTENT(IN)    :: KG3D, KG2D, KGRIB(KG3D+KG2D)
+INTEGER(KIND=JPIM),OPTIONAL,INTENT(IN) :: KPARAMID(KG3D+KG2D)
+INTEGER(KIND=JPIM) :: INDD, INDV, INDT, INDU, INDW, INDQ, INDO, INDS, IWIND
+REAL(KIND=JPHOOK) :: ZHOOK_HANDLE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END SUBROUTINE ALLOCATE_GRID
+
+! ------------------------------------------------------------------
+
+SUBROUTINE DEALLOCATE_GRID(YDGRID)
+
+TYPE (GRIDPOINT_FIELD), INTENT(INOUT) :: YDGRID
+REAL(KIND=JPHOOK) :: ZHOOK_HANDLE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END SUBROUTINE DEALLOCATE_GRID
+
+! ------------------------------------------------------------------
+
+SUBROUTINE ASSIGN_SCALAR_GP(YDGRID,PSCALAR)
+TYPE (GRIDPOINT_FIELD), INTENT(INOUT) :: YDGRID
+REAL(KIND=JPRB), INTENT(IN) :: PSCALAR
+REAL(KIND=JPHOOK) :: ZHOOK_HANDLE
+
+
+
+
+
+
+
+
+END SUBROUTINE ASSIGN_SCALAR_GP
+
+! ------------------------------------------------------------------
+
+SUBROUTINE ASSIGN_GP_GP(YDGRID1,YDGRID2)
+TYPE (GRIDPOINT_FIELD), INTENT(INOUT) :: YDGRID1
+TYPE (GRIDPOINT_FIELD), INTENT(IN)    :: YDGRID2
+REAL(KIND=JPHOOK) :: ZHOOK_HANDLE
+
+
+
+
+
+
+
+
+
+END SUBROUTINE ASSIGN_GP_GP
+
+! ------------------------------------------------------------------
+
+LOGICAL FUNCTION EQUIV_GRID(YDGRID1,YDGRID2)
+TYPE(GRIDPOINT_FIELD), INTENT(IN) :: YDGRID1
+TYPE(GRIDPOINT_FIELD), INTENT(IN) :: YDGRID2
+REAL(KIND=JPHOOK) :: ZHOOK_HANDLE
+
+LOGICAL :: LL
+INTEGER(KIND=JPIM) :: JF
+
+
+
+
+
+
+
+
+
+
+
+END FUNCTION EQUIV_GRID
+
+! ------------------------------------------------------------------
+
+LOGICAL FUNCTION NEQUIV_GRID(YDGRID1,YDGRID2)
+TYPE(GRIDPOINT_FIELD), INTENT(IN) :: YDGRID1
+TYPE(GRIDPOINT_FIELD), INTENT(IN) :: YDGRID2
+REAL(KIND=JPHOOK) :: ZHOOK_HANDLE
+
+
+
+
+
+
+END FUNCTION NEQUIV_GRID
+
+! ------------------------------------------------------------------
+
+SUBROUTINE HUGIFY_ENDGRID(YDGRID)
+TYPE (GRIDPOINT_FIELD), INTENT(INOUT) :: YDGRID
+REAL(KIND=JPRB) :: ZZZ
+INTEGER(KIND=JPIM) :: ILAST, JF, JB, JL, JJ
+REAL(KIND=JPHOOK) :: ZHOOK_HANDLE
+
+
+
+
+
+
+
+
+
+
+
+END SUBROUTINE HUGIFY_ENDGRID
+
+! ------------------------------------------------------------------
+
+SUBROUTINE SELF_ADD_GP(YDA,YDB)
+TYPE (GRIDPOINT_FIELD), INTENT(INOUT) :: YDA
+TYPE (GRIDPOINT_FIELD), INTENT(IN)    :: YDB
+INTEGER(KIND=JPIM) :: JB,JF,JL,JJ,ILEN
+REAL(KIND=JPHOOK) :: ZHOOK_HANDLE
+
+
+
+
+
+
+
+
+
+
+
+END SUBROUTINE SELF_ADD_GP
+! ------------------------------------------------------------------
+
+SUBROUTINE SELF_ADD_SCAL(YDA,PB)
+TYPE (GRIDPOINT_FIELD), INTENT(INOUT) :: YDA
+REAL(KIND=JPRB), INTENT(IN) :: PB
+INTEGER(KIND=JPIM) :: JB,JF,JL,JJ,ILEN
+REAL(KIND=JPHOOK) :: ZHOOK_HANDLE
+
+
+
+
+
+
+
+
+END SUBROUTINE SELF_ADD_SCAL
+! ------------------------------------------------------------------
+
+REAL(KIND=JPRB) FUNCTION DOT_PRODUCT_GP(YDA,YDB)
+
+TYPE (GRIDPOINT_FIELD), INTENT(IN) :: YDA
+TYPE (GRIDPOINT_FIELD), INTENT(IN) :: YDB
+
+INTEGER(KIND=JPIM) :: JB,JF,JL,JJ,ILEN
+REAL(KIND=JPHOOK) :: ZHOOK_HANDLE
+REAL(KIND=JPRB) :: ZZ(1)
+
+
+
+
+
+
+
+
+
+
+
+END FUNCTION DOT_PRODUCT_GP
+! ------------------------------------------------------------------
+
+SUBROUTINE SELF_AXPY_GP(YDA,YDB,PZ)
+TYPE (GRIDPOINT_FIELD), INTENT(INOUT) :: YDA
+TYPE (GRIDPOINT_FIELD), INTENT(IN)    :: YDB
+REAL(KIND=JPRB),        INTENT(IN)    :: PZ
+INTEGER(KIND=JPIM) :: JB,JF,JL,JJ,ILEN
+REAL(KIND=JPHOOK) :: ZHOOK_HANDLE
+
+
+
+
+
+
+
+
+
+
+
+END SUBROUTINE SELF_AXPY_GP
+! ------------------------------------------------------------------
+
+SUBROUTINE SELF_SUB_GP(YDA,YDB)
+TYPE (GRIDPOINT_FIELD), INTENT(INOUT) :: YDA
+TYPE (GRIDPOINT_FIELD), INTENT(IN)    :: YDB
+INTEGER(KIND=JPIM) :: JB,JF,JL,JJ,ILEN
+REAL(KIND=JPHOOK) :: ZHOOK_HANDLE
+
+
+
+
+
+
+
+
+
+
+
+END SUBROUTINE SELF_SUB_GP
+! ------------------------------------------------------------------
+
+SUBROUTINE SELF_MUL_GP(YDA,YDB)
+TYPE (GRIDPOINT_FIELD), INTENT(INOUT) :: YDA
+TYPE (GRIDPOINT_FIELD), INTENT(IN)    :: YDB
+INTEGER(KIND=JPIM) :: JB,JF,JL,JJ,ILEN
+REAL(KIND=JPHOOK) :: ZHOOK_HANDLE
+
+
+
+
+
+
+
+
+
+
+
+END SUBROUTINE SELF_MUL_GP
+
+! ------------------------------------------------------------------
+
+SUBROUTINE SELF_MUL_SCAL(YDA,PB)
+TYPE (GRIDPOINT_FIELD), INTENT(INOUT) :: YDA
+REAL(KIND=JPRB), INTENT(IN) :: PB
+INTEGER(KIND=JPIM) :: JB,JF,JL,JJ,ILEN
+REAL(KIND=JPHOOK) :: ZHOOK_HANDLE
+
+
+
+
+
+
+
+
+END SUBROUTINE SELF_MUL_SCAL
+! ------------------------------------------------------------------
+
+SUBROUTINE CLIP_GRID(YDA, PMIN2D, PMAX2D, PMIN3D, PMAX3D)
+TYPE (GRIDPOINT_FIELD), INTENT(INOUT) :: YDA
+REAL(KIND=JPRB), INTENT(IN), DIMENSION(YDA%NG2D)             ,OPTIONAL :: PMIN2D
+REAL(KIND=JPRB), INTENT(IN), DIMENSION(YDA%NG2D)             ,OPTIONAL :: PMAX2D
+REAL(KIND=JPRB), INTENT(IN), DIMENSION(YDA%NFLEVG, YDA%NG3D) ,OPTIONAL :: PMIN3D
+REAL(KIND=JPRB), INTENT(IN), DIMENSION(YDA%NFLEVG, YDA%NG3D) ,OPTIONAL :: PMAX3D
+INTEGER(KIND=JPIM) :: JB,JF,JL,JJ,ILEN
+
+LOGICAL :: LLMIN2D, LLMAX2D, LLMIN3D, LLMAX3D
+
+REAL(KIND=JPHOOK) :: ZHOOK_HANDLE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END SUBROUTINE CLIP_GRID
+! ------------------------------------------------------------------
+
+END MODULE GRIDPOINT_FIELDS_MIX

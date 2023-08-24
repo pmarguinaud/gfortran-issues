@@ -1,0 +1,741 @@
+
+! Copyright 2011 ECMWF
+!
+! This software was developed at ECMWF for evaluation
+! and may be used for academic and research purposes only.
+! The software is provided as is without any warranty.
+!
+! This software can be used, copied and modified but not
+! redistributed or sold. This notice must be reproduced
+! on each copy made.
+!
+
+!> Handle state for the IFS model
+
+MODULE FIELDS_MOD
+
+USE PARKIND1,               ONLY : JPRB, JPIM
+USE FIELDS_BASE_MOD,        ONLY : FIELDS_BASE, SPLIT_SPEC_GP
+USE GEOMETRY_MOD,           ONLY : GEOMETRY,GEOMETRY_SAME
+USE VARIABLES_MOD,          ONLY : VARIABLES, VARIABLES_CLONE ! , HAS_MODEL_FIELDS
+USE TYPE_MODEL,             ONLY : MODEL
+USE YOMGFL,                 ONLY : TGFL
+USE YOMGMV,                 ONLY : TGMV
+USE SURFACE_FIELDS_MIX,     ONLY : TSURF
+USE EC_PHYS_FIELDS_MOD,     ONLY : TEC_PHYS_FIELDS
+USE SPECTRAL_FIELDS_MOD,    ONLY : SPECTRAL_FIELD
+USE FIELD_CONTAINER_GP_MOD, ONLY : FIELD_CONTAINER_GP
+USE FIELD_VARIABLES_MOD,    ONLY : FIELD_VARIABLES
+USE SURFACE_VARIABLES_MOD,  ONLY : SURFACE_VARIABLES
+USE FIELD_REGISTRY_MOD,     ONLY : FIELD_REGISTRY
+USE YOMCFU,                 ONLY : TCFU
+USE YOMXFU,                 ONLY : TXFU
+USE YOMMCUF,                ONLY : TMCUF
+USE FULLPOS,                ONLY : TFPOS
+!
+USE YEMLBC_FIELDS,          ONLY : TELBC_FIELDS
+
+IMPLICIT NONE
+PRIVATE
+
+TYPE, PUBLIC,EXTENDS(FIELDS_BASE) :: FIELDS
+  TYPE(TGMV)                   :: YRGMV
+  TYPE(TGFL)                   :: YRGFL
+  TYPE(TSURF)                  :: YRSURF
+  TYPE(SPECTRAL_FIELD)         :: YRSPEC
+  TYPE(TEC_PHYS_FIELDS)        :: YEC_PHYS_FIELDS
+  TYPE(FIELD_CONTAINER_GP)     :: FIELD_T0
+  TYPE(FIELD_CONTAINER_GP)     :: FIELD_T1
+  TYPE(FIELD_CONTAINER_GP)     :: FIELD_T9
+  TYPE(FIELD_CONTAINER_GP)     :: FIELD_PC
+  TYPE(FIELD_CONTAINER_GP)     :: FIELD_PT
+  REAL(KIND=JPRB), ALLOCATABLE :: YRGFLT5Q(:,:,:)
+
+  !! physics related diagnostics
+  TYPE(TCFU)              :: YRCFU !! cumulated flux activation
+  TYPE(TXFU)              :: YRXFU !! instantaneous flux activation
+  !! moved here from model_lam_coupling_mod.F90
+  TYPE(TELBC_FIELDS), POINTER :: YRELBC_FIELDS=>NULL()
+! Fullpos
+  TYPE(TFPOS),ALLOCATABLE :: YFPOS
+  !! Monitoring the Coupling-Update Frequency CUF
+  TYPE(TMCUF)             :: YMCUF !! CUF
+
+  ! Field registry for new object-based field management
+  TYPE(FIELD_REGISTRY) :: REGISTRY
+
+  ! Storage object hierarchy for core state and surface fields
+  ! Note, these are large auto-generated derived types, so we
+  ! attach them via pointers to avoid the nested type becoming
+  ! too big for compilers to handle!
+  TYPE(FIELD_VARIABLES), POINTER :: VARIABLES => NULL()
+  TYPE(SURFACE_VARIABLES), POINTER :: SURFVARS => NULL()
+
+CONTAINS
+
+FINAL :: FIELDS_FINAL
+
+END TYPE FIELDS
+
+PUBLIC :: FIELDS_CREATE, FIELDS_DELETE, FIELDS_ZEROS,FIELDS_SET_MODEL,&
+ & FIELDS_COPY, FIELDS_ADD, FIELDS_SUB, FIELDS_MUL, FIELDS_AXPY,&
+ & FIELDS_DOT_PROD, FIELDS_SCHUR_PROD, FIELDS_ADD_INCR, FIELDS_DIFF_INCR,&
+ & FIELDS_RANDOM, FIELDS_CHANGE_RESOL, FIELDS_GPNORM,FIELDS_CONTAIN,&
+ & FIELDS_FORCE_WITH, FIELDS_STORE_GFL_Q, FIELDS_LIMIT_Q, FIELDS_LIMIT_GO3
+
+! ------------------------------------------------------------------------------
+
+CONTAINS
+
+! ------------------------------------------------------------------------------
+
+SUBROUTINE FIELDS_CREATE(SELF, GEOM, YDMODEL, VARS, YDCFUPP, YDXFUPP, KPPVCLIX, KPPEDR)
+USE PARKIND1           , ONLY : JPRB, JPIM
+USE TYPE_MODEL         , ONLY : MODEL
+USE YOMMP0             , ONLY : LOUTPUT
+USE YOMHOOK            , ONLY : LHOOK, DR_HOOK, JPHOOK
+USE SPECTRAL_FIELDS_MOD, ONLY : ALLOCATE_SPEC
+USE YOMCFU             , ONLY : TCFU_KEYS
+USE YOMXFU             , ONLY : TXFU_KEYS
+
+
+TYPE(FIELDS)   ,         INTENT(INOUT) :: SELF
+TYPE(GEOMETRY) , TARGET, INTENT(IN)    :: GEOM
+TYPE(MODEL)    , TARGET, INTENT(INOUT) :: YDMODEL
+TYPE(VARIABLES),         INTENT(IN)    :: VARS
+TYPE(TCFU_KEYS),OPTIONAL,INTENT(IN)    :: YDCFUPP
+TYPE(TXFU_KEYS),OPTIONAL,INTENT(IN)    :: YDXFUPP
+INTEGER(KIND=JPIM),OPTIONAL,INTENT(IN) :: KPPVCLIX
+INTEGER(KIND=JPIM),OPTIONAL,INTENT(IN) :: KPPEDR
+
+INTEGER(KIND=JPIM), ALLOCATABLE :: IGRIB(:)
+LOGICAL,SAVE :: LLFIRST=.TRUE.
+REAL(KIND=JPHOOK) :: ZHOOK_HANDLE
+
+INTEGER(KIND=JPIM) :: IUNIT,IOS
+LOGICAL :: LL_OPEN, LL_NAMOPEN
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END SUBROUTINE FIELDS_CREATE
+
+! ------------------------------------------------------------------------------
+
+SUBROUTINE FIELDS_DELETE(SELF)
+
+
+
+USE PARKIND1, ONLY : JPRB
+USE YOMHOOK,  ONLY : LHOOK, DR_HOOK, JPHOOK
+USE SURFACE_FIELDS_MIX , ONLY : DEALLO_SURF
+USE SPECTRAL_FIELDS_MOD, ONLY: DEALLOCATE_SPEC
+
+
+TYPE(FIELDS), INTENT(INOUT) :: SELF
+
+REAL(KIND=JPHOOK) :: ZHOOK_HANDLE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END SUBROUTINE FIELDS_DELETE
+
+! ------------------------------------------------------------------------------
+
+SUBROUTINE FIELDS_ZEROS(SELF)
+USE PARKIND1          , ONLY : JPRB
+USE YOMHOOK           , ONLY : LHOOK, DR_HOOK, JPHOOK
+USE YOMGFL            , ONLY : ZERO_YOMGFL
+USE YOMGMV            , ONLY : ZERO_YOMGMV
+USE SURFACE_FIELDS_MIX, ONLY : ZERO_SURF
+USE YOMMCUF           , ONLY : ZERO_MCUF
+
+
+TYPE(FIELDS), INTENT(INOUT) :: SELF
+REAL(KIND=JPHOOK) :: ZHOOK_HANDLE
+
+
+
+
+
+
+
+
+
+
+
+
+END SUBROUTINE FIELDS_ZEROS
+
+! ------------------------------------------------------------------------------
+
+SUBROUTINE FIELDS_COPY(SELF,RHS)
+USE PARKIND1          , ONLY : JPRB
+USE YOMHOOK           , ONLY : LHOOK, DR_HOOK, JPHOOK
+USE YOMGFL            , ONLY : COPY_YOMGFL
+USE YOMGMV            , ONLY : COPY_YOMGMV
+USE SURFACE_FIELDS_MIX, ONLY : COPY_SURF
+USE TYPE_FLUXES       , ONLY : COPY_FLUX
+USE YOMMCUF           , ONLY : COPY_MCUF
+
+
+TYPE(FIELDS)    , INTENT(INOUT) :: SELF
+TYPE(FIELDS)    , INTENT(IN)    :: RHS
+
+REAL(KIND=JPHOOK) :: ZHOOK_HANDLE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END SUBROUTINE FIELDS_COPY
+
+! ------------------------------------------------------------------------------
+
+SUBROUTINE FIELDS_SET_MODEL(SELF,YDMODEL)
+USE YOMHOOK,  ONLY : LHOOK, DR_HOOK, JPHOOK
+
+TYPE(FIELDS),         INTENT(INOUT) :: SELF
+TYPE(MODEL) , TARGET, INTENT(IN)    :: YDMODEL
+REAL(KIND=JPHOOK) :: ZHOOK_HANDLE
+
+
+
+
+
+
+
+
+END SUBROUTINE FIELDS_SET_MODEL
+
+! ------------------------------------------------------------------------------
+
+SUBROUTINE FIELDS_ADD(SELF,RHS)
+USE PARKIND1, ONLY : JPRB
+USE YOMGFL,   ONLY : AXPBY_YOMGFL
+USE YOMGMV,   ONLY : AXPBY_YOMGMV
+USE SURFACE_FIELDS_MIX, ONLY : ADD_SURF
+USE YOMHOOK,  ONLY : LHOOK, DR_HOOK, JPHOOK
+
+
+TYPE(FIELDS)    , INTENT(INOUT) :: SELF
+TYPE(FIELDS)    , INTENT(IN)    :: RHS
+
+REAL(KIND=JPHOOK) :: ZHOOK_HANDLE
+
+
+
+
+
+
+
+
+
+
+
+END SUBROUTINE FIELDS_ADD
+
+! ------------------------------------------------------------------------------
+
+SUBROUTINE FIELDS_SUB(SELF,RHS)
+USE PARKIND1, ONLY : JPRB
+USE YOMHOOK , ONLY : LHOOK, DR_HOOK, JPHOOK
+USE YOMGFL  , ONLY : AXPBY_YOMGFL,DIFF_YOMGFL
+USE YOMGMV  , ONLY : AXPBY_YOMGMV,DIFF_YOMGMV
+USE SURFACE_FIELDS_MIX, ONLY : AXPBY_SURF
+
+
+TYPE(FIELDS)    , INTENT(INOUT) :: SELF
+TYPE(FIELDS)    , INTENT(IN)    :: RHS
+
+REAL(KIND=JPHOOK) :: ZHOOK_HANDLE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END SUBROUTINE FIELDS_SUB
+
+! ------------------------------------------------------------------------------
+
+SUBROUTINE FIELDS_MUL(SELF,PZ)
+USE PARKIND1, ONLY : JPRB
+USE YOMHOOK,  ONLY : LHOOK, DR_HOOK, JPHOOK
+USE YOMGFL,   ONLY : MUL_YOMGFL
+USE YOMGMV,   ONLY : MUL_YOMGMV
+
+
+TYPE(FIELDS)    , INTENT(INOUT) :: SELF
+REAL(KIND=JPRB) , INTENT(IN)    :: PZ
+REAL(KIND=JPHOOK) :: ZHOOK_HANDLE
+
+
+
+
+
+
+
+
+END SUBROUTINE FIELDS_MUL
+
+! ------------------------------------------------------------------------------
+
+SUBROUTINE FIELDS_AXPY(SELF,PZ,RHS)
+USE PARKIND1, ONLY : JPRB
+USE YOMHOOK,  ONLY : LHOOK, DR_HOOK, JPHOOK
+USE YOMGFL,   ONLY : AXPBY_YOMGFL
+USE YOMGMV,   ONLY : AXPBY_YOMGMV
+
+
+TYPE(FIELDS)    , INTENT(INOUT) :: SELF
+REAL(KIND=JPRB) , INTENT(IN)    :: PZ
+TYPE(FIELDS)    , INTENT(IN)    :: RHS
+REAL(KIND=JPHOOK) :: ZHOOK_HANDLE
+
+
+
+
+
+
+
+
+END SUBROUTINE FIELDS_AXPY
+
+! ------------------------------------------------------------------------------
+
+SUBROUTINE FIELDS_DOT_PROD(FLD1,FLD2,PPROD)
+USE PARKIND1, ONLY : JPRB
+USE YOMHOOK,  ONLY : LHOOK, DR_HOOK, JPHOOK
+USE YOMGFL,   ONLY : DOT_PROD_YOMGFL
+USE YOMGMV,   ONLY : DOT_PROD_YOMGMV
+
+
+TYPE(FIELDS)    , INTENT(IN)    :: FLD1, FLD2
+REAL(KIND=JPRB) , INTENT(OUT)   :: PPROD
+
+REAL(KIND=JPRB) :: ZTMP
+REAL(KIND=JPHOOK) :: ZHOOK_HANDLE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END SUBROUTINE FIELDS_DOT_PROD
+
+! ------------------------------------------------------------------------------
+
+SUBROUTINE FIELDS_SCHUR_PROD(FLD1, FLD2)
+USE PARKIND1, ONLY : JPRB
+USE YOMHOOK,  ONLY : LHOOK, DR_HOOK, JPHOOK
+
+
+TYPE(FIELDS), INTENT(INOUT) :: FLD1
+TYPE(FIELDS), INTENT(IN)    :: FLD2
+
+REAL(KIND=JPHOOK) :: ZHOOK_HANDLE
+
+
+
+
+
+
+
+
+
+
+
+END SUBROUTINE FIELDS_SCHUR_PROD
+
+! ------------------------------------------------------------------------------
+
+SUBROUTINE FIELDS_ADD_INCR(SELF,RHS)
+USE PARKIND1, ONLY : JPRB
+USE YOMGFL,   ONLY : AXPBY_YOMGFL
+USE YOMGMV,   ONLY : AXPBY_YOMGMV
+USE YOMHOOK,  ONLY : LHOOK, DR_HOOK, JPHOOK
+
+
+TYPE(FIELDS)    , INTENT(INOUT) :: SELF
+TYPE(FIELDS)    , INTENT(IN)    :: RHS
+REAL(KIND=JPHOOK) :: ZHOOK_HANDLE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END SUBROUTINE FIELDS_ADD_INCR
+
+! ------------------------------------------------------------------------------
+
+SUBROUTINE FIELDS_DIFF_INCR(LHS,X1,X2)
+USE PARKIND1, ONLY : JPRB
+USE YOMHOOK,  ONLY : LHOOK, DR_HOOK, JPHOOK
+
+
+TYPE(FIELDS)    , INTENT(INOUT) :: LHS
+TYPE(FIELDS)    , INTENT(IN)    :: X1
+TYPE(FIELDS)    , INTENT(IN)    :: X2
+REAL(KIND=JPHOOK) :: ZHOOK_HANDLE
+
+
+
+
+
+
+
+
+
+
+END SUBROUTINE FIELDS_DIFF_INCR
+
+! ------------------------------------------------------------------------------
+
+SUBROUTINE FIELDS_RANDOM(SELF)
+USE PARKIND1, ONLY : JPRB
+USE YOMHOOK,  ONLY : LHOOK, DR_HOOK, JPHOOK
+USE YOMGFL,   ONLY : RANDOM_YOMGFL
+USE YOMGMV,   ONLY : RANDOM_YOMGMV
+
+
+TYPE(FIELDS)    , INTENT(INOUT) :: SELF
+REAL(KIND=JPHOOK) :: ZHOOK_HANDLE
+
+
+
+
+
+
+
+
+END SUBROUTINE FIELDS_RANDOM
+
+! ------------------------------------------------------------------------------
+
+SUBROUTINE FIELDS_CHANGE_RESOL(SELF,RHS)
+USE PARKIND1, ONLY : JPRB
+USE YOMHOOK,  ONLY : LHOOK, DR_HOOK, JPHOOK
+USE YOMCT3,  ONLY : NSTEP
+USE FIELD_DEFINITIONS, ONLY : FID
+
+
+TYPE(FIELDS)    , INTENT(INOUT) :: SELF
+TYPE(FIELDS)    , INTENT(INOUT) :: RHS
+
+LOGICAL :: LLSAME_RESOL
+INTEGER, PARAMETER :: NINTERPSURF = 0 
+INTEGER(KIND=JPIM),ALLOCATABLE :: IFIDS_SPEC(:),IACTIVE(:)
+REAL(KIND=JPHOOK) :: ZHOOK_HANDLE
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+END SUBROUTINE FIELDS_CHANGE_RESOL
+! ------------------------------------------------------------------------------
+
+SUBROUTINE FIELDS_FORCE_WITH(SELF,RHS,KFIDS)
+USE PARKIND1, ONLY : JPRB
+USE YOMHOOK,  ONLY : LHOOK, DR_HOOK, JPHOOK
+USE YOMCT0,  ONLY : NINTERPTRAJ, LECMWF
+USE YOMCT3,  ONLY : NSTEP
+USE FIELD_DEFINITIONS, ONLY : FID
+
+
+TYPE(FIELDS)      , INTENT(INOUT) :: SELF
+TYPE(FIELDS)      , INTENT(INOUT) :: RHS
+INTEGER(KIND=JPIM), INTENT(IN)    :: KFIDS(:)
+
+LOGICAL :: LLSAME_RESOL
+INTEGER(KIND=JPIM),ALLOCATABLE :: IFIDS_GP(:),IFIDS_SPEC(:),IACTIVE(:),IFIDS_CLIM(:),IFIDS_SNOW(:)
+REAL(KIND=JPHOOK) :: ZHOOK_HANDLE
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+END SUBROUTINE FIELDS_FORCE_WITH
+
+! ------------------------------------------------------------------------------
+
+SUBROUTINE FIELDS_GPNORM(SELF,CDGREP)
+USE PARKIND1, ONLY : JPRB
+USE YOMHOOK,  ONLY : LHOOK, DR_HOOK, JPHOOK
+
+
+
+TYPE(FIELDS)    , INTENT(IN)    :: SELF
+CHARACTER(LEN=*), INTENT(IN)    :: CDGREP
+
+REAL(KIND=JPRB) :: ZSPNORMS(3,1), ZGMVNORMS(3,SELF%GEOM%YRDIMV%NFLEVG), ZGFLNORMS(3,SELF%GEOM%YRDIMV%NFLEVG)
+REAL(KIND=JPHOOK) :: ZHOOK_HANDLE
+
+
+
+
+
+
+
+
+
+
+
+
+
+END SUBROUTINE FIELDS_GPNORM
+
+! ------------------------------------------------------------------------------
+
+SUBROUTINE FIELDS_CONTAIN(SELF,YDGEOMETRY,YDMODEL)
+USE PARKIND1, ONLY : JPRB
+USE YOMHOOK,  ONLY : LHOOK, DR_HOOK, JPHOOK
+USE TYPE_MODEL, ONLY : MODEL
+USE YOMMP0   , ONLY : NPRINTLEV
+USE FIELD_DEFINITIONS_BASE, ONLY : JP_T0, JP_T9, JP_T1, JP_PC, JP_PT
+USE FIELD_DEFINITIONS, ONLY : MAIN_FIELD_METADATA
+
+TYPE(FIELDS), TARGET, INTENT(INOUT) :: SELF
+TYPE(GEOMETRY),       INTENT(IN)    :: YDGEOMETRY
+TYPE(MODEL)         , INTENT(IN)    :: YDMODEL
+INTEGER(KIND=JPIM),ALLOCATABLE :: IACTIVE(:)
+INTEGER(KIND=JPIM) :: JID
+REAL(KIND=JPHOOK)  :: ZHOOK_HANDLE
+
+
+
+
+
+
+END SUBROUTINE FIELDS_CONTAIN
+
+! ------------------------------------------------------------------------------
+
+SUBROUTINE FIELDS_STORE_GFL_Q(SELF)
+
+TYPE(FIELDS), INTENT(INOUT) :: SELF
+INTEGER(KIND=JPIM) :: JGFL,JSTGLO,ICEND,IBL
+
+
+
+END SUBROUTINE FIELDS_STORE_GFL_Q
+
+! ------------------------------------------------------------------------------
+
+SUBROUTINE FIELDS_LIMIT_Q(SELF)
+
+TYPE(FIELDS), INTENT(INOUT) :: SELF
+
+
+
+
+END SUBROUTINE FIELDS_LIMIT_Q
+
+! ------------------------------------------------------------------------------
+
+SUBROUTINE FIELDS_LIMIT_GO3(SELF)
+
+TYPE(FIELDS), INTENT(INOUT) :: SELF
+INTEGER(KIND=JPIM) :: JGFL, JSTGLO, ICEND, IBL
+
+
+
+END SUBROUTINE FIELDS_LIMIT_GO3
+
+! ------------------------------------------------------------------------------
+
+SUBROUTINE FIELDS_FINAL(THIS)
+  TYPE(FIELDS) :: THIS
+  
+END SUBROUTINE FIELDS_FINAL
+
+! ------------------------------------------------------------------------------
+
+END MODULE FIELDS_MOD

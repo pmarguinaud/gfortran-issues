@@ -10,4 +10,6 @@ err
 explicit
 include
 intfb_list
-
+*.o
+*.mod
+f2f.pl

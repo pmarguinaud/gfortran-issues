@@ -1,0 +1,67 @@
+MODULE YOE_TILE_PROP
+
+USE PARKIND1  ,ONLY : JPRB
+
+IMPLICIT NONE
+
+PRIVATE 
+
+!       ----------------------------------------------------------------
+!PSEUDO HISTORICAL TESSEL QUANTITIES (INSTANTANEOUS) FOR EACH TILE
+
+!     M.Hamrud      E.C.M.W.F.    20 Apr 2005
+!     Moved out these arrays from GPPBUF     
+!       ----------------------------------------------------------------
+
+TYPE,PUBLIC :: TETILEPROP
+  REAL(KIND=JPRB),ALLOCATABLE :: RUSTRTI(:,:,:) ! E-W  SURFACE STRESS 
+  REAL(KIND=JPRB),ALLOCATABLE :: RVSTRTI(:,:,:) ! N-S  SURFACE STRESS 
+  REAL(KIND=JPRB),ALLOCATABLE :: RAHFSTI(:,:,:) ! SURFACE SENSIBLE HEAT FLUX
+  REAL(KIND=JPRB),ALLOCATABLE :: REVAPTI(:,:,:) ! EVAPORATION 
+  REAL(KIND=JPRB),ALLOCATABLE :: RTSKTI (:,:,:) ! SKIN TEMPERATURE 
+  CONTAINS
+  PROCEDURE :: CREATE
+  PROCEDURE :: ZERO
+  PROCEDURE :: COPY
+END TYPE TETILEPROP
+CONTAINS
+!============================================================================
+SUBROUTINE CREATE(SELF,YDGEOMETRY,YDDPHY)
+USE GEOMETRY_MOD , ONLY : GEOMETRY
+USE YOMDPHY  , ONLY : TDPHY
+
+TYPE(GEOMETRY)    ,INTENT(IN)    :: YDGEOMETRY
+TYPE(TDPHY)       ,INTENT(INOUT):: YDDPHY
+CLASS(TETILEPROP) :: SELF
+
+
+
+END SUBROUTINE CREATE
+!============================================================================
+
+SUBROUTINE ZERO(SELF)
+CLASS(TETILEPROP) :: SELF
+
+
+
+
+
+END SUBROUTINE ZERO
+!============================================================================
+SUBROUTINE COPY(SELF,RHS)
+CLASS(TETILEPROP) :: SELF
+CLASS(TETILEPROP) :: RHS
+
+
+
+
+
+
+
+
+
+
+
+END SUBROUTINE COPY
+
+END MODULE YOE_TILE_PROP
