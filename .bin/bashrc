@@ -1,0 +1,16 @@
+
+if [ -f ~/.bashrc ]
+then
+  . ~/.bashrc
+fi
+
+if [ -f ~/.bash_profile ]
+then
+  . ~/.bash_profile
+fi
+
+export PS1="fixpack> "
+
+alias r='./.bin/run.sh'
+alias e="vi apl_arpege.F90"
+

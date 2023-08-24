@@ -1,0 +1,13 @@
+.D*
+.orig/
+.sublist
+.subsublist
+apl_arpege.F90.xml
+apl_arpege.o
+apl_arpege.txt
+calls
+err
+explicit
+include
+intfb_list
+
