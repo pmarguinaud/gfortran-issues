@@ -153,7 +153,6 @@ contains
 
     use yomhook,  only           : lhook, dr_hook, jphook
     use radiation_thermodynamics, only : thermodynamics_type
-    use radiation_constants,      only : GasConstantDryAir, AccelDueToGravity
 
     class(cloud_type),         intent(inout) :: this
     type(thermodynamics_type), intent(in)    :: thermodynamics

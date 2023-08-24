@@ -32,8 +32,6 @@ module radiation_config
   use radiation_cloud_optics_data,   only : cloud_optics_type
   use radiation_aerosol_optics_data, only : aerosol_optics_type
   use radiation_pdf_sampler,         only : pdf_sampler_type
-  use radiation_cloud_cover,         only : OverlapName, &
-       & IOverlapMaximumRandom, IOverlapExponentialRandom, IOverlapExponential
 
   implicit none
 
@@ -157,7 +155,7 @@ module radiation_config
     real(jprb) :: cloud_mixing_ratio_threshold = 1.0e-9_jprb
 
     ! Overlap scheme
-    integer :: i_overlap_scheme = IOverlapExponentialRandom
+    integer :: i_overlap_scheme = 0
 
     ! Use the Shonk et al. (2010) "beta" overlap parameter, rather
     ! than the "alpha" overlap parameter of Hogan and Illingworth

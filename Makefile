@@ -234,47 +234,20 @@ ptrxfu.o: $(SRC)/ptrxfu.F90 ptrxfu_type.o
 ptrxfu_type.o: $(SRC)/ptrxfu_type.F90 parkind1.o
 	$(FC) -c $(SRC)/ptrxfu_type.F90
 
-radiation_adding_ica_lw.o: $(SRC)/radiation_adding_ica_lw.F90 parkind1.o yomhook.o
-	$(FC) -c $(SRC)/radiation_adding_ica_lw.F90
-
-radiation_adding_ica_sw.o: $(SRC)/radiation_adding_ica_sw.F90 parkind1.o yomhook.o
-	$(FC) -c $(SRC)/radiation_adding_ica_sw.F90
-
 radiation_aerosol.o: $(SRC)/radiation_aerosol.F90 parkind1.o yomhook.o radiation_config.o
 	$(FC) -c $(SRC)/radiation_aerosol.F90
-
-radiation_aerosol_optics.o: $(SRC)/radiation_aerosol_optics.F90 parkind1.o yomhook.o radiation_config.o radiation_aerosol_optics_data.o radiation_thermodynamics.o radiation_gas.o radiation_aerosol.o radiation_constants.o
-	$(FC) -c $(SRC)/radiation_aerosol_optics.F90
 
 radiation_aerosol_optics_data.o: $(SRC)/radiation_aerosol_optics_data.F90 parkind1.o yomhook.o
 	$(FC) -c $(SRC)/radiation_aerosol_optics_data.F90
 
-radiation_cloud.o: $(SRC)/radiation_cloud.F90 parkind1.o yomhook.o radiation_thermodynamics.o radiation_constants.o radiation_config.o
+radiation_cloud.o: $(SRC)/radiation_cloud.F90 parkind1.o yomhook.o radiation_thermodynamics.o radiation_config.o
 	$(FC) -c $(SRC)/radiation_cloud.F90
-
-radiation_cloud_cover.o: $(SRC)/radiation_cloud_cover.F90 parkind1.o yomhook.o
-	$(FC) -c $(SRC)/radiation_cloud_cover.F90
-
-radiation_cloud_generator.o: $(SRC)/radiation_cloud_generator.F90 parkind1.o yomhook.o random_numbers_mix.o radiation_pdf_sampler.o radiation_cloud_cover.o
-	$(FC) -c $(SRC)/radiation_cloud_generator.F90
-
-radiation_cloud_optics.o: $(SRC)/radiation_cloud_optics.F90 parkind1.o yomhook.o radiation_config.o radiation_cloud_optics_data.o radiation_ice_optics_fu.o radiation_ice_optics_baran.o radiation_ice_optics_baran2017.o radiation_ice_optics_yi.o radiation_liquid_optics_socrates.o radiation_liquid_optics_slingo.o radiation_thermodynamics.o radiation_cloud.o radiation_constants.o
-	$(FC) -c $(SRC)/radiation_cloud_optics.F90
 
 radiation_cloud_optics_data.o: $(SRC)/radiation_cloud_optics_data.F90 parkind1.o yomhook.o
 	$(FC) -c $(SRC)/radiation_cloud_optics_data.F90
 
-radiation_cloudless_lw.o: $(SRC)/radiation_cloudless_lw.F90 parkind1.o yomhook.o radiation_config.o radiation_flux.o radiation_two_stream.o radiation_adding_ica_lw.o radiation_lw_derivatives.o
-	$(FC) -c $(SRC)/radiation_cloudless_lw.F90
-
-radiation_cloudless_sw.o: $(SRC)/radiation_cloudless_sw.F90 parkind1.o yomhook.o radiation_config.o radiation_single_level.o radiation_flux.o radiation_two_stream.o radiation_constants.o radiation_adding_ica_sw.o
-	$(FC) -c $(SRC)/radiation_cloudless_sw.F90
-
-radiation_config.o: $(SRC)/radiation_config.F90 parkind1.o radiation_cloud_optics_data.o radiation_aerosol_optics_data.o radiation_pdf_sampler.o radiation_cloud_cover.o yomhook.o
+radiation_config.o: $(SRC)/radiation_config.F90 parkind1.o radiation_cloud_optics_data.o radiation_aerosol_optics_data.o radiation_pdf_sampler.o yomhook.o
 	$(FC) -c $(SRC)/radiation_config.F90
-
-radiation_constants.o: $(SRC)/radiation_constants.F90 parkind1.o
-	$(FC) -c $(SRC)/radiation_constants.F90
 
 radiation_flux.o: $(SRC)/radiation_flux.F90 parkind1.o yomhook.o radiation_config.o
 	$(FC) -c $(SRC)/radiation_flux.F90
@@ -282,83 +255,17 @@ radiation_flux.o: $(SRC)/radiation_flux.F90 parkind1.o yomhook.o radiation_confi
 radiation_gas.o: $(SRC)/radiation_gas.F90 parkind1.o yomhook.o radiation_config.o
 	$(FC) -c $(SRC)/radiation_gas.F90
 
-radiation_homogeneous_lw.o: $(SRC)/radiation_homogeneous_lw.F90 parkind1.o yomhook.o radiation_config.o radiation_cloud.o radiation_flux.o radiation_two_stream.o radiation_adding_ica_lw.o radiation_lw_derivatives.o
-	$(FC) -c $(SRC)/radiation_homogeneous_lw.F90
-
-radiation_homogeneous_sw.o: $(SRC)/radiation_homogeneous_sw.F90 parkind1.o yomhook.o radiation_config.o radiation_single_level.o radiation_cloud.o radiation_flux.o radiation_two_stream.o radiation_constants.o radiation_adding_ica_sw.o
-	$(FC) -c $(SRC)/radiation_homogeneous_sw.F90
-
-radiation_ice_optics_baran.o: $(SRC)/radiation_ice_optics_baran.F90 parkind1.o
-	$(FC) -c $(SRC)/radiation_ice_optics_baran.F90
-
-radiation_ice_optics_baran2017.o: $(SRC)/radiation_ice_optics_baran2017.F90 parkind1.o
-	$(FC) -c $(SRC)/radiation_ice_optics_baran2017.F90
-
-radiation_ice_optics_fu.o: $(SRC)/radiation_ice_optics_fu.F90 parkind1.o
-	$(FC) -c $(SRC)/radiation_ice_optics_fu.F90
-
-radiation_ice_optics_yi.o: $(SRC)/radiation_ice_optics_yi.F90 parkind1.o
-	$(FC) -c $(SRC)/radiation_ice_optics_yi.F90
-
-radiation_ifs_rrtm.o: $(SRC)/radiation_ifs_rrtm.F90 yoerrtm.o yoesrtm.o yoerrtftr.o yomhook.o radiation_config.o yoerdi.o radiation_gas.o parkind1.o parrrtm.o yomdimv.o radiation_thermodynamics.o radiation_single_level.o yoerrtwn.o
-	$(FC) -c $(SRC)/radiation_ifs_rrtm.F90
-
-radiation_interface.o: $(SRC)/radiation_interface.F90 parkind1.o yomhook.o radiation_config.o radiation_monochromatic.o radiation_ifs_rrtm.o radiation_cloud_optics.o radiation_aerosol_optics.o yoerdi.o radiation_gas.o radiation_single_level.o radiation_thermodynamics.o radiation_cloud.o radiation_aerosol.o radiation_flux.o radiation_tripleclouds_sw.o radiation_tripleclouds_lw.o radiation_mcica_sw.o radiation_mcica_lw.o radiation_cloudless_sw.o radiation_cloudless_lw.o radiation_homogeneous_sw.o radiation_homogeneous_lw.o radiation_save.o
-	$(FC) -c $(SRC)/radiation_interface.F90
-
-radiation_liquid_optics_slingo.o: $(SRC)/radiation_liquid_optics_slingo.F90 parkind1.o yomhook.o
-	$(FC) -c $(SRC)/radiation_liquid_optics_slingo.F90
-
-radiation_liquid_optics_socrates.o: $(SRC)/radiation_liquid_optics_socrates.F90 parkind1.o
-	$(FC) -c $(SRC)/radiation_liquid_optics_socrates.F90
-
-radiation_lw_derivatives.o: $(SRC)/radiation_lw_derivatives.F90 parkind1.o yomhook.o radiation_matrix.o
-	$(FC) -c $(SRC)/radiation_lw_derivatives.F90
-
-radiation_matrix.o: $(SRC)/radiation_matrix.F90 parkind1.o yomhook.o
-	$(FC) -c $(SRC)/radiation_matrix.F90
-
-radiation_mcica_lw.o: $(SRC)/radiation_mcica_lw.F90 parkind1.o yomhook.o radiation_config.o radiation_single_level.o radiation_cloud.o radiation_flux.o radiation_two_stream.o radiation_adding_ica_lw.o radiation_lw_derivatives.o radiation_cloud_generator.o
-	$(FC) -c $(SRC)/radiation_mcica_lw.F90
-
-radiation_mcica_sw.o: $(SRC)/radiation_mcica_sw.F90 parkind1.o yomhook.o radiation_config.o radiation_single_level.o radiation_cloud.o radiation_flux.o radiation_two_stream.o radiation_adding_ica_sw.o radiation_cloud_generator.o
-	$(FC) -c $(SRC)/radiation_mcica_sw.F90
-
-radiation_monochromatic.o: $(SRC)/radiation_monochromatic.F90 radiation_config.o radiation_gas.o parkind1.o radiation_thermodynamics.o radiation_single_level.o radiation_constants.o radiation_cloud.o radiation_aerosol.o
-	$(FC) -c $(SRC)/radiation_monochromatic.F90
-
-radiation_overlap.o: $(SRC)/radiation_overlap.F90 parkind1.o yomhook.o
-	$(FC) -c $(SRC)/radiation_overlap.F90
-
 radiation_pdf_sampler.o: $(SRC)/radiation_pdf_sampler.F90 parkind1.o yomhook.o
 	$(FC) -c $(SRC)/radiation_pdf_sampler.F90
 
-radiation_regions.o: $(SRC)/radiation_regions.F90 parkind1.o yomhook.o
-	$(FC) -c $(SRC)/radiation_regions.F90
-
-radiation_save.o: $(SRC)/radiation_save.F90 parkind1.o yomhook.o radiation_config.o radiation_thermodynamics.o radiation_flux.o radiation_single_level.o radiation_cloud.o radiation_gas.o radiation_aerosol.o
-	$(FC) -c $(SRC)/radiation_save.F90
-
-radiation_setup.o: $(SRC)/radiation_setup.F90 parkind1.o radiation_config.o yoeaerop.o yomhook.o yoerad.o yoephy.o yoeaeratm.o yomcompo.o yoerdi.o radiation_interface.o radiation_aerosol_optics.o radiation_aerosol_optics_data.o
+radiation_setup.o: $(SRC)/radiation_setup.F90 parkind1.o radiation_config.o yoeaerop.o yomhook.o yoerad.o yoephy.o yoeaeratm.o yomcompo.o yoerdi.o radiation_aerosol_optics_data.o
 	$(FC) -c $(SRC)/radiation_setup.F90
 
 radiation_single_level.o: $(SRC)/radiation_single_level.F90 parkind1.o yomhook.o radiation_config.o
 	$(FC) -c $(SRC)/radiation_single_level.F90
 
-radiation_spartacus_lw.o: $(SRC)/radiation_spartacus_lw.F90 parkind1.o yomhook.o radiation_config.o radiation_thermodynamics.o radiation_cloud.o radiation_regions.o radiation_overlap.o radiation_flux.o radiation_matrix.o radiation_two_stream.o radiation_lw_derivatives.o radiation_constants.o
-	$(FC) -c $(SRC)/radiation_spartacus_lw.F90
-
-radiation_thermodynamics.o: $(SRC)/radiation_thermodynamics.F90 parkind1.o yomhook.o radiation_constants.o radiation_config.o
+radiation_thermodynamics.o: $(SRC)/radiation_thermodynamics.F90 parkind1.o yomhook.o radiation_config.o
 	$(FC) -c $(SRC)/radiation_thermodynamics.F90
-
-radiation_tripleclouds_lw.o: $(SRC)/radiation_tripleclouds_lw.F90 parkind1.o yomhook.o radiation_config.o radiation_cloud.o radiation_regions.o radiation_overlap.o radiation_flux.o radiation_matrix.o radiation_two_stream.o radiation_lw_derivatives.o
-	$(FC) -c $(SRC)/radiation_tripleclouds_lw.F90
-
-radiation_tripleclouds_sw.o: $(SRC)/radiation_tripleclouds_sw.F90 parkind1.o yomhook.o radiation_config.o radiation_single_level.o radiation_cloud.o radiation_regions.o radiation_overlap.o radiation_flux.o radiation_matrix.o radiation_two_stream.o
-	$(FC) -c $(SRC)/radiation_tripleclouds_sw.F90
-
-radiation_two_stream.o: $(SRC)/radiation_two_stream.F90 parkind1.o yomhook.o
-	$(FC) -c $(SRC)/radiation_two_stream.F90
 
 random_numbers_mix.o: $(SRC)/random_numbers_mix.F90 parkind1.o yomhook.o
 	$(FC) -c $(SRC)/random_numbers_mix.F90

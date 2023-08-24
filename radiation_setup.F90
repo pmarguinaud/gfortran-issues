@@ -40,9 +40,7 @@ USE radiation_config, ONLY :   config_type, &
        &                       ISolverMcICA, ISolverSpartacus, &
        &                       ISolverTripleclouds, &
        &                       ILiquidModelSlingo, ILiquidModelSOCRATES, &
-       &                       IIceModelFu, IIceModelBaran, &
-       &                       IOverlapExponential, IOverlapMaximumRandom, &
-       &                       IOverlapExponentialRandom
+       &                       IIceModelFu, IIceModelBaran
 USE YOEAEROP    ,ONLY : ALF_SU, ALF_OM, ALF_DD, ALF_SS, ALF_BC, ALF_NI, ALF_AM, ALF_SOA, &
      &  ASY_SU, ASY_OM, ASY_DD, ASY_SS, ASY_BC, ASY_NI, ASY_AM, ASY_SOA, &
      &  OMG_SU, OMG_OM, OMG_DD, OMG_SS, OMG_BC, OMG_NI, OMG_AM, OMG_SOA, &
@@ -105,10 +103,6 @@ CONTAINS
     USE YOMCOMPO, ONLY : TCOMPO
     USE YOERDI  , ONLY : TERDI
 
-    USE RADIATION_INTERFACE,      ONLY : SETUP_RADIATION
-    USE RADIATION_AEROSOL_OPTICS, ONLY : DRY_AEROSOL_SW_MASS_EXTINCTION
-
-    
     TYPE(TERDI)       ,INTENT(INOUT):: YDERDI
     TYPE(TEAERATM)    ,INTENT(INOUT)          :: YDEAERATM
     TYPE(TCOMPO)      ,INTENT(IN)             :: YDCOMPO

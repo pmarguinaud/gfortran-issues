@@ -136,7 +136,6 @@ contains
   subroutine get_layer_mass(this,istartcol,iendcol,layer_mass)
 
     use yomhook,  only           : lhook, dr_hook, jphook
-    use radiation_constants,  only : AccelDueToGravity
 
     class(thermodynamics_type), intent(in)  :: this
     integer,                    intent(in)  :: istartcol, iendcol
@@ -164,7 +163,6 @@ contains
   subroutine get_layer_mass_column(this, icol, layer_mass)
 
     use yomhook,  only           : lhook, dr_hook, jphook
-    use radiation_constants,  only : AccelDueToGravity
 
     class(thermodynamics_type), intent(in)  :: this
     integer,                    intent(in)  :: icol
@@ -196,7 +194,6 @@ contains
   subroutine get_layer_separation(pressure_hl, temperature_hl, layer_separation)
 
     use yomhook,  only           : lhook, dr_hook, jphook
-    use radiation_constants,  only : GasConstantDryAir, AccelDueToGravity
 
     
     
