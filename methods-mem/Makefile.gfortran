@@ -1,0 +1,3 @@
+SRC=.
+FC=/usr/bin/time -f 'mem=%Mkb' gfortran -g -O0 -ffree-line-length-none 
+all: apl_arpege.o

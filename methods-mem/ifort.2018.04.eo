@@ -1,0 +1,887 @@
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./parkind1.F90
+mem=23316kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomhook.F90
+mem=25216kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomct0.F90
+mem=23196kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomcver.F90
+mem=19576kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomvert.F90
+mem=26340kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomsta.F90
+mem=18812kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomlap.F90
+mem=23432kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomleg.F90
+mem=23428kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomdim.F90
+mem=23468kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomdimv.F90
+mem=18388kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yommp.F90
+mem=23556kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomgem.F90
+mem=22572kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomcsgeom.F90
+mem=20128kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomgsgeom.F90
+mem=24704kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomorog.F90
+mem=20564kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./type_spgeom.F90
+mem=19100kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yemdim.F90
+mem=23572kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yemgeo.F90
+mem=23328kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yemmp.F90
+mem=23560kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yemlap.F90
+mem=23452kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yemgsl.F90
+mem=23280kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yemlbc_geo.F90
+mem=23412kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./type_geometry.F90
+mem=27968kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./geometry_mod.F90
+geometry_mod.F90(88): warning #6178: The return value of this FUNCTION has not been defined.   [GEOMETRY_SAME]
+FUNCTION GEOMETRY_SAME(SELF,OTHER)
+---------^
+mem=31296kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./field_basic_module.F90
+mem=24260kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./field_2rm_module.F90
+field_2rm_module.F90(134): warning #6178: The return value of this FUNCTION has not been defined.   [VIEW_PTR]
+  FUNCTION FIELD_2RM_GET_VIEW(SELF, BLOCK_INDEX, ZERO) RESULT(VIEW_PTR)
+--------------------------------------------------------------^
+field_2rm_module.F90(352): warning #6178: The return value of this FUNCTION has not been defined.   [JDIM]
+  INTEGER (KIND=JPIM) FUNCTION FIELD_2RM_GET_LAST_CONTIGUOUS_DIMENSION (PTR) RESULT (JDIM)
+-------------------------------------------------------------------------------------^
+mem=28156kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./field_3rm_module.F90
+field_3rm_module.F90(134): warning #6178: The return value of this FUNCTION has not been defined.   [VIEW_PTR]
+  FUNCTION FIELD_3RM_GET_VIEW(SELF, BLOCK_INDEX, ZERO) RESULT(VIEW_PTR)
+--------------------------------------------------------------^
+field_3rm_module.F90(354): warning #6178: The return value of this FUNCTION has not been defined.   [JDIM]
+  INTEGER (KIND=JPIM) FUNCTION FIELD_3RM_GET_LAST_CONTIGUOUS_DIMENSION (PTR) RESULT (JDIM)
+-------------------------------------------------------------------------------------^
+mem=30656kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./field_4rm_module.F90
+field_4rm_module.F90(134): warning #6178: The return value of this FUNCTION has not been defined.   [VIEW_PTR]
+  FUNCTION FIELD_4RM_GET_VIEW(SELF, BLOCK_INDEX, ZERO) RESULT(VIEW_PTR)
+--------------------------------------------------------------^
+field_4rm_module.F90(356): warning #6178: The return value of this FUNCTION has not been defined.   [JDIM]
+  INTEGER (KIND=JPIM) FUNCTION FIELD_4RM_GET_LAST_CONTIGUOUS_DIMENSION (PTR) RESULT (JDIM)
+-------------------------------------------------------------------------------------^
+mem=28808kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./field_5rm_module.F90
+field_5rm_module.F90(134): warning #6178: The return value of this FUNCTION has not been defined.   [VIEW_PTR]
+  FUNCTION FIELD_5RM_GET_VIEW(SELF, BLOCK_INDEX, ZERO) RESULT(VIEW_PTR)
+--------------------------------------------------------------^
+field_5rm_module.F90(358): warning #6178: The return value of this FUNCTION has not been defined.   [JDIM]
+  INTEGER (KIND=JPIM) FUNCTION FIELD_5RM_GET_LAST_CONTIGUOUS_DIMENSION (PTR) RESULT (JDIM)
+-------------------------------------------------------------------------------------^
+mem=29924kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./field_2rb_module.F90
+field_2rb_module.F90(134): warning #6178: The return value of this FUNCTION has not been defined.   [VIEW_PTR]
+  FUNCTION FIELD_2RB_GET_VIEW(SELF, BLOCK_INDEX, ZERO) RESULT(VIEW_PTR)
+--------------------------------------------------------------^
+field_2rb_module.F90(352): warning #6178: The return value of this FUNCTION has not been defined.   [JDIM]
+  INTEGER (KIND=JPIM) FUNCTION FIELD_2RB_GET_LAST_CONTIGUOUS_DIMENSION (PTR) RESULT (JDIM)
+-------------------------------------------------------------------------------------^
+mem=28156kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./field_3rb_module.F90
+field_3rb_module.F90(134): warning #6178: The return value of this FUNCTION has not been defined.   [VIEW_PTR]
+  FUNCTION FIELD_3RB_GET_VIEW(SELF, BLOCK_INDEX, ZERO) RESULT(VIEW_PTR)
+--------------------------------------------------------------^
+field_3rb_module.F90(354): warning #6178: The return value of this FUNCTION has not been defined.   [JDIM]
+  INTEGER (KIND=JPIM) FUNCTION FIELD_3RB_GET_LAST_CONTIGUOUS_DIMENSION (PTR) RESULT (JDIM)
+-------------------------------------------------------------------------------------^
+mem=28636kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./field_4rb_module.F90
+field_4rb_module.F90(134): warning #6178: The return value of this FUNCTION has not been defined.   [VIEW_PTR]
+  FUNCTION FIELD_4RB_GET_VIEW(SELF, BLOCK_INDEX, ZERO) RESULT(VIEW_PTR)
+--------------------------------------------------------------^
+field_4rb_module.F90(356): warning #6178: The return value of this FUNCTION has not been defined.   [JDIM]
+  INTEGER (KIND=JPIM) FUNCTION FIELD_4RB_GET_LAST_CONTIGUOUS_DIMENSION (PTR) RESULT (JDIM)
+-------------------------------------------------------------------------------------^
+mem=23928kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./field_5rb_module.F90
+field_5rb_module.F90(134): warning #6178: The return value of this FUNCTION has not been defined.   [VIEW_PTR]
+  FUNCTION FIELD_5RB_GET_VIEW(SELF, BLOCK_INDEX, ZERO) RESULT(VIEW_PTR)
+--------------------------------------------------------------^
+field_5rb_module.F90(358): warning #6178: The return value of this FUNCTION has not been defined.   [JDIM]
+  INTEGER (KIND=JPIM) FUNCTION FIELD_5RB_GET_LAST_CONTIGUOUS_DIMENSION (PTR) RESULT (JDIM)
+-------------------------------------------------------------------------------------^
+mem=28944kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./field_2rd_module.F90
+field_2rd_module.F90(134): warning #6178: The return value of this FUNCTION has not been defined.   [VIEW_PTR]
+  FUNCTION FIELD_2RD_GET_VIEW(SELF, BLOCK_INDEX, ZERO) RESULT(VIEW_PTR)
+--------------------------------------------------------------^
+field_2rd_module.F90(352): warning #6178: The return value of this FUNCTION has not been defined.   [JDIM]
+  INTEGER (KIND=JPIM) FUNCTION FIELD_2RD_GET_LAST_CONTIGUOUS_DIMENSION (PTR) RESULT (JDIM)
+-------------------------------------------------------------------------------------^
+mem=28152kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./field_3rd_module.F90
+field_3rd_module.F90(134): warning #6178: The return value of this FUNCTION has not been defined.   [VIEW_PTR]
+  FUNCTION FIELD_3RD_GET_VIEW(SELF, BLOCK_INDEX, ZERO) RESULT(VIEW_PTR)
+--------------------------------------------------------------^
+field_3rd_module.F90(354): warning #6178: The return value of this FUNCTION has not been defined.   [JDIM]
+  INTEGER (KIND=JPIM) FUNCTION FIELD_3RD_GET_LAST_CONTIGUOUS_DIMENSION (PTR) RESULT (JDIM)
+-------------------------------------------------------------------------------------^
+mem=28640kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./field_4rd_module.F90
+field_4rd_module.F90(134): warning #6178: The return value of this FUNCTION has not been defined.   [VIEW_PTR]
+  FUNCTION FIELD_4RD_GET_VIEW(SELF, BLOCK_INDEX, ZERO) RESULT(VIEW_PTR)
+--------------------------------------------------------------^
+field_4rd_module.F90(356): warning #6178: The return value of this FUNCTION has not been defined.   [JDIM]
+  INTEGER (KIND=JPIM) FUNCTION FIELD_4RD_GET_LAST_CONTIGUOUS_DIMENSION (PTR) RESULT (JDIM)
+-------------------------------------------------------------------------------------^
+mem=23928kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./field_5rd_module.F90
+field_5rd_module.F90(134): warning #6178: The return value of this FUNCTION has not been defined.   [VIEW_PTR]
+  FUNCTION FIELD_5RD_GET_VIEW(SELF, BLOCK_INDEX, ZERO) RESULT(VIEW_PTR)
+--------------------------------------------------------------^
+field_5rd_module.F90(358): warning #6178: The return value of this FUNCTION has not been defined.   [JDIM]
+  INTEGER (KIND=JPIM) FUNCTION FIELD_5RD_GET_LAST_CONTIGUOUS_DIMENSION (PTR) RESULT (JDIM)
+-------------------------------------------------------------------------------------^
+mem=28948kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./field_2im_module.F90
+field_2im_module.F90(134): warning #6178: The return value of this FUNCTION has not been defined.   [VIEW_PTR]
+  FUNCTION FIELD_2IM_GET_VIEW(SELF, BLOCK_INDEX, ZERO) RESULT(VIEW_PTR)
+--------------------------------------------------------------^
+field_2im_module.F90(352): warning #6178: The return value of this FUNCTION has not been defined.   [JDIM]
+  INTEGER (KIND=JPIM) FUNCTION FIELD_2IM_GET_LAST_CONTIGUOUS_DIMENSION (PTR) RESULT (JDIM)
+-------------------------------------------------------------------------------------^
+mem=23272kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./field_3im_module.F90
+field_3im_module.F90(134): warning #6178: The return value of this FUNCTION has not been defined.   [VIEW_PTR]
+  FUNCTION FIELD_3IM_GET_VIEW(SELF, BLOCK_INDEX, ZERO) RESULT(VIEW_PTR)
+--------------------------------------------------------------^
+field_3im_module.F90(354): warning #6178: The return value of this FUNCTION has not been defined.   [JDIM]
+  INTEGER (KIND=JPIM) FUNCTION FIELD_3IM_GET_LAST_CONTIGUOUS_DIMENSION (PTR) RESULT (JDIM)
+-------------------------------------------------------------------------------------^
+mem=28636kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./field_4im_module.F90
+field_4im_module.F90(134): warning #6178: The return value of this FUNCTION has not been defined.   [VIEW_PTR]
+  FUNCTION FIELD_4IM_GET_VIEW(SELF, BLOCK_INDEX, ZERO) RESULT(VIEW_PTR)
+--------------------------------------------------------------^
+field_4im_module.F90(356): warning #6178: The return value of this FUNCTION has not been defined.   [JDIM]
+  INTEGER (KIND=JPIM) FUNCTION FIELD_4IM_GET_LAST_CONTIGUOUS_DIMENSION (PTR) RESULT (JDIM)
+-------------------------------------------------------------------------------------^
+mem=30812kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./field_5im_module.F90
+field_5im_module.F90(134): warning #6178: The return value of this FUNCTION has not been defined.   [VIEW_PTR]
+  FUNCTION FIELD_5IM_GET_VIEW(SELF, BLOCK_INDEX, ZERO) RESULT(VIEW_PTR)
+--------------------------------------------------------------^
+field_5im_module.F90(358): warning #6178: The return value of this FUNCTION has not been defined.   [JDIM]
+  INTEGER (KIND=JPIM) FUNCTION FIELD_5IM_GET_LAST_CONTIGUOUS_DIMENSION (PTR) RESULT (JDIM)
+-------------------------------------------------------------------------------------^
+mem=24064kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./field_2lm_module.F90
+field_2lm_module.F90(134): warning #6178: The return value of this FUNCTION has not been defined.   [VIEW_PTR]
+  FUNCTION FIELD_2LM_GET_VIEW(SELF, BLOCK_INDEX, ZERO) RESULT(VIEW_PTR)
+--------------------------------------------------------------^
+field_2lm_module.F90(352): warning #6178: The return value of this FUNCTION has not been defined.   [JDIM]
+  INTEGER (KIND=JPIM) FUNCTION FIELD_2LM_GET_LAST_CONTIGUOUS_DIMENSION (PTR) RESULT (JDIM)
+-------------------------------------------------------------------------------------^
+mem=23272kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./field_3lm_module.F90
+field_3lm_module.F90(134): warning #6178: The return value of this FUNCTION has not been defined.   [VIEW_PTR]
+  FUNCTION FIELD_3LM_GET_VIEW(SELF, BLOCK_INDEX, ZERO) RESULT(VIEW_PTR)
+--------------------------------------------------------------^
+field_3lm_module.F90(354): warning #6178: The return value of this FUNCTION has not been defined.   [JDIM]
+  INTEGER (KIND=JPIM) FUNCTION FIELD_3LM_GET_LAST_CONTIGUOUS_DIMENSION (PTR) RESULT (JDIM)
+-------------------------------------------------------------------------------------^
+mem=28636kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./field_4lm_module.F90
+field_4lm_module.F90(134): warning #6178: The return value of this FUNCTION has not been defined.   [VIEW_PTR]
+  FUNCTION FIELD_4LM_GET_VIEW(SELF, BLOCK_INDEX, ZERO) RESULT(VIEW_PTR)
+--------------------------------------------------------------^
+field_4lm_module.F90(356): warning #6178: The return value of this FUNCTION has not been defined.   [JDIM]
+  INTEGER (KIND=JPIM) FUNCTION FIELD_4LM_GET_LAST_CONTIGUOUS_DIMENSION (PTR) RESULT (JDIM)
+-------------------------------------------------------------------------------------^
+mem=23924kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./field_5lm_module.F90
+field_5lm_module.F90(134): warning #6178: The return value of this FUNCTION has not been defined.   [VIEW_PTR]
+  FUNCTION FIELD_5LM_GET_VIEW(SELF, BLOCK_INDEX, ZERO) RESULT(VIEW_PTR)
+--------------------------------------------------------------^
+field_5lm_module.F90(358): warning #6178: The return value of this FUNCTION has not been defined.   [JDIM]
+  INTEGER (KIND=JPIM) FUNCTION FIELD_5LM_GET_LAST_CONTIGUOUS_DIMENSION (PTR) RESULT (JDIM)
+-------------------------------------------------------------------------------------^
+mem=28944kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./field_module.F90
+mem=35124kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoe_aerodiag.F90
+mem=23872kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./par_gfl.F90
+mem=23288kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yom_ygfl.F90
+yom_ygfl.F90(16): warning #6379: The structure contains one or more misaligned fields.   [TYPE_GFL_COMP]
+TYPE TYPE_GFL_COMP ! Individual field descriptor
+-----^
+yom_ygfl.F90(109): warning #6379: The structure contains one or more misaligned fields.   [TYPE_GFL_NAML]
+TYPE TYPE_GFL_NAML ! Individual field descriptor for namelist input
+-----^
+yom_ygfl.F90(197): warning #6379: The structure contains one or more misaligned fields.   [TYPE_GFLD]
+TYPE TYPE_GFLD
+-----^
+mem=23716kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./variable_module.F90
+mem=49240kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./field_factory_module.F90
+mem=44084kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./type_gmvs.F90
+mem=23884kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomgmv.F90
+yomgmv.F90(166): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [PPROD]
+SUBROUTINE DOT_PROD_YOMGMV(YDGEOMETRY,FLD1,FLD2,PPROD)
+------------------------------------------------^
+mem=30492kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomgfl.F90
+yomgfl.F90(176): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [PPROD]
+SUBROUTINE DOT_PROD_YOMGFL(YDGEOMETRY,FLD1,FLD2,PPROD)
+------------------------------------------------^
+mem=34784kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./field_variables_mod.F90
+mem=59796kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./surface_variables_mod.F90
+mem=96284kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomdyn.F90
+mem=20576kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./surface_fields_mix.F90
+mem=64848kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomdphy.F90
+mem=24256kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoe_tile_prop.F90
+mem=28140kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoe_phys_mwave.F90
+mem=28224kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./ec_phys_fields_mod.F90
+mem=24616kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomradf.F90
+mem=24692kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomdyncore.F90
+mem=23808kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomcst.F90
+mem=25256kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoe_spectral_planck.F90
+yoe_spectral_planck.F90(131): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [PPLANCK]
+SUBROUTINE CALC(SELF, KIDIA, KFDIA, KLON, PTEMPERATURE, PPLANCK)
+--------------------------------------------------------^
+mem=20708kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoerad.F90
+mem=25228kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoesw.F90
+mem=19776kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoeovlp.F90
+mem=24028kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoeneur.F90
+mem=23304kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoelwrad.F90
+mem=23988kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoeaerd.F90
+mem=24184kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoeaeratm.F90
+yoeaeratm.F90(17): warning #6379: The structure contains one or more misaligned fields.   [TYPE_AERO_DESC]
+TYPE :: TYPE_AERO_DESC
+--------^
+mem=24896kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoe_uvrad.F90
+mem=24336kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoerdi.F90
+mem=23404kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoe_mcica.F90
+mem=24120kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomrcoef.F90
+mem=24128kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomtrc.F90
+mem=19348kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomprad.F90
+mem=24280kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoerip.F90
+mem=23276kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./radiation_cloud_optics_data.F90
+mem=19524kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./radiation_aerosol_optics_data.F90
+radiation_aerosol_optics_data.F90(291): warning #6178: The return value of this FUNCTION has not been defined.   [CALC_RH_INDEX]
+  function calc_rh_index(this, rh)
+-----------^
+radiation_aerosol_optics_data.F90(327): warning #6178: The return value of this FUNCTION has not been defined.   [LINE_STR]
+  pure function get_line(str,iline) result(line_str)
+-------------------------------------------^
+mem=26484kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./radiation_pdf_sampler.F90
+radiation_pdf_sampler.F90(142): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [VAL]
+  subroutine sample_from_pdf_masked(this, nsamp, fsd, cdf, val, mask)
+-----------------------------------------------------------^
+radiation_pdf_sampler.F90(105): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [VAL]
+  elemental subroutine sample_from_pdf(this, fsd, cdf, val)
+-------------------------------------------------------^
+mem=23048kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./radiation_config.F90
+radiation_config.F90(915): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [NWEIGHTS]
+       &                    nweights, iband, weight, weighting_name)
+----------------------------^
+radiation_config.F90(915): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [IBAND]
+       &                    nweights, iband, weight, weighting_name)
+--------------------------------------^
+radiation_config.F90(915): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [WEIGHT]
+       &                    nweights, iband, weight, weighting_name)
+---------------------------------------------^
+radiation_config.F90(1087): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [ICODE]
+  subroutine get_enum_code(str, enum_str, var_name, icode)
+----------------------------------------------------^
+radiation_config.F90(1219): warning #6178: The return value of this FUNCTION has not been defined.   [IS_BAD]
+       &                    i1, i2, j1, j2, k1, k2) result (is_bad)
+------------------------------------------------------------^
+radiation_config.F90(1189): warning #6178: The return value of this FUNCTION has not been defined.   [IS_BAD]
+       &                    i1, i2, j1, j2) result (is_bad)
+----------------------------------------------------^
+radiation_config.F90(1163): warning #6178: The return value of this FUNCTION has not been defined.   [IS_BAD]
+  function out_of_bounds_1d(var, var_name, boundmin, boundmax, do_fix, i1, i2) result (is_bad)
+---------------------------------------------------------------------------------------^
+mem=31356kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoeaerop.F90
+mem=23992kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoephy.F90
+mem=28020kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomcompo.F90
+yomcompo.F90(134): warning #6178: The return value of this FUNCTION has not been defined.   [LLOK]
+FUNCTION COMPO_EMIS_AUX_READ_NAMELIST(THIS_OUT) RESULT(LLOK)
+-------------------------------------------------------^
+yomcompo.F90(113): warning #6178: The return value of this FUNCTION has not been defined.   [LLOK]
+FUNCTION COMPO_EMIS_READ_NAMELIST(THIS_OUT) RESULT(LLOK)
+---------------------------------------------------^
+mem=20036kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./radiation_setup.F90
+mem=28516kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yommp0.F90
+mem=19004kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./eint_mod.F90
+mem=21032kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./model_physics_radiation_mod.F90
+mem=30972kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomdimf.F90
+mem=19180kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoeozoc.F90
+mem=18784kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoecmip.F90
+mem=23596kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoeradghg.F90
+mem=24252kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoeaerc.F90
+mem=24404kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./reglatlon_field_mix.F90
+reglatlon_field_mix.F90(177): warning #6178: The return value of this FUNCTION has not been defined.   [XCAP]
+FUNCTION XCAP(PX)
+---------^
+reglatlon_field_mix.F90(184): warning #6178: The return value of this FUNCTION has not been defined.   [XMOD]
+FUNCTION XMOD(PX)
+---------^
+reglatlon_field_mix.F90(102): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [PINTVAL]
+SUBROUTINE INTPOL_REGLATLON(PINTVAL,YDFLL,PLAT,PLON,PSIN)
+----------------------------^
+mem=20584kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomrip.F90
+mem=26084kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yommoderrmod.F90
+mem=19368kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./spectral_variables_mod.F90
+mem=23376kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./spectral_fields_data.F90
+mem=19048kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./random_numbers_mix.F90
+random_numbers_mix.F90(243): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [PX]
+SUBROUTINE GAUSSIAN_DISTRIBUTION (PX, YD_STREAM)
+----------------------------------^
+random_numbers_mix.F90(203): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [PX]
+SUBROUTINE UNIFORM_DISTRIBUTION (PX,YD_STREAM)
+---------------------------------^
+mem=26028kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./spectral_fields_mod.F90
+spectral_fields_mod.F90(290): warning #6178: The return value of this FUNCTION has not been defined.   [ALLOCATED_SPEC]
+LOGICAL FUNCTION ALLOCATED_SPEC (YDSP)
+-----------------^
+mem=27944kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./spectral_arp_mod.F90
+mem=29316kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./gridpoint_fields_mix.F90
+gridpoint_fields_mix.F90(227): warning #6178: The return value of this FUNCTION has not been defined.   [EQUIV_GRID]
+LOGICAL FUNCTION EQUIV_GRID(YDGRID1,YDGRID2)
+-----------------^
+gridpoint_fields_mix.F90(249): warning #6178: The return value of this FUNCTION has not been defined.   [NEQUIV_GRID]
+LOGICAL FUNCTION NEQUIV_GRID(YDGRID1,YDGRID2)
+-----------------^
+gridpoint_fields_mix.F90(318): warning #6178: The return value of this FUNCTION has not been defined.   [DOT_PRODUCT_GP]
+REAL(KIND=JPRB) FUNCTION DOT_PRODUCT_GP(YDA,YDB)
+-------------------------^
+mem=27192kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomspsdt.F90
+mem=25280kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./spp_gen_mod.F90
+spp_gen_mod.F90(305): warning #6178: The return value of this FUNCTION has not been defined.   [GET_SPP_IDX]
+integer(kind=jpim) function get_spp_idx( cd_label, sm )
+----------------------------^
+spp_gen_mod.F90(320): warning #6178: The return value of this FUNCTION has not been defined.   [GET_SPP_IDX_DEF]
+integer(kind=jpim) function get_spp_idx_def( cd_label, sm )
+----------------------------^
+spp_gen_mod.F90(336): warning #6178: The return value of this FUNCTION has not been defined.   [ACTIVE_SPP_PN]
+logical function active_spp_pn(cd_label, sm )
+-----------------^
+spp_gen_mod.F90(229): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [KIDX_MAP]
+subroutine map_indices_spp_nml( sm, ku_nam, ku_out, kidx_map )
+----------------------------------------------------^
+mem=25804kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./spp_def_mod.F90
+mem=24848kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./spp_mod.F90
+spp_mod.F90(110): warning #6178: The return value of this FUNCTION has not been defined.   [KGET_SEED_SPP]
+FUNCTION KGET_SEED_SPP( YDCONF, KPERT, KRF, KMEMBER, KSHIFT, LABSTIME, LDVERBOSE, PTSTEP)
+---------^
+mem=21188kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./type_ecv.F90
+type_ecv.F90(181): warning #6178: The return value of this FUNCTION has not been defined.   [EQUIV_ECV]
+LOGICAL FUNCTION EQUIV_ECV(YDECV1,YDECV2)
+-----------------^
+mem=24956kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./model_general_conf_mod.F90
+mem=29668kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./parkind_ocean.F90
+mem=18388kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./cplng_types_mod.F90
+mem=23468kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yommcc.F90
+mem=25192kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomcom.F90
+mem=24312kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomcou.F90
+mem=24044kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./model_atmos_ocean_coupling_mod.F90
+mem=24868kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./intdyn_mod.F90
+intdyn_mod.F90(549): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [YD]
+SUBROUTINE SUPTR_TGFLT(YD)
+-----------------------^
+intdyn_mod.F90(523): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [YD]
+SUBROUTINE SUPTR_TGMVT(YD,LDNHDYN)
+-----------------------^
+intdyn_mod.F90(496): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [YD]
+SUBROUTINE SUPTR_TTND(YD,LDNHEE,LDNHQE)
+----------------------^
+intdyn_mod.F90(467): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [YD]
+SUBROUTINE SUPTR_THWIND(YD)
+------------------------^
+intdyn_mod.F90(436): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [YD]
+SUBROUTINE SUPTR_TCTY(YD)
+----------------------^
+intdyn_mod.F90(397): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [YD]
+SUBROUTINE SUPTR_TRCP(YD)
+----------------------^
+intdyn_mod.F90(369): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [YD]
+SUBROUTINE SUPTR_TXYBDER(LD,YD)
+----------------------------^
+intdyn_mod.F90(341): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [YD]
+SUBROUTINE SUPTR_TXYB(LD,YD)
+-------------------------^
+mem=40080kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomdyna.F90
+mem=21880kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yemdyn.F90
+mem=23460kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./spng_mod.F90
+mem=27812kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./ptrgppc.F90
+mem=24036kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./intdynsl_mod.F90
+intdynsl_mod.F90(323): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [YD]
+SUBROUTINE SUPTR_TCCO(YD)
+----------------------^
+intdynsl_mod.F90(295): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [YD]
+SUBROUTINE SUPTR_TSCO(YD)
+----------------------^
+intdynsl_mod.F90(236): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [YD]
+SUBROUTINE SUPTR_TRSCAW(YDDYN,YDDYNA,KSLDIMK,LDVINTWS,LDHVI,YD)
+------------------------------------------------------------^
+intdynsl_mod.F90(197): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [YD]
+SUBROUTINE SUPTR_TLSCAW(YD)
+------------------------^
+mem=24836kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomvsplip.F90
+mem=23416kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomvsleta.F90
+mem=23604kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomhslmer.F90
+mem=23416kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomslint.F90
+mem=23480kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomslrep.F90
+mem=24108kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./ptrslb1.F90
+mem=24220kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./ptrslb2.F90
+mem=24096kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./ptrslb15.F90
+mem=24132kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomtnh.F90
+mem=24028kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./model_dynamics_mod.F90
+mem=27872kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomslphy.F90
+mem=24344kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoevdf.F90
+mem=24020kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./model_physics_general_mod.F90
+mem=24268kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoecld.F90
+mem=24100kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoecldp.F90
+mem=24764kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoecnd.F90
+mem=23084kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoecumf.F90
+mem=24372kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomgrib.F90
+mem=23768kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomct3.F90
+mem=18388kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoe_cuconvca.F90
+yoe_cuconvca.F90(435): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [KCELL]
+ &                       KLIVE,KDX,KDY,KFERT,KCELL,PFERTIN,PCELLIN,PWGHT,PRAND1D,LD_ADVECT)
+---------------------------------------------^
+yoe_cuconvca.F90(435): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [KFERT]
+ &                       KLIVE,KDX,KDY,KFERT,KCELL,PFERTIN,PCELLIN,PWGHT,PRAND1D,LD_ADVECT)
+---------------------------------------^
+yoe_cuconvca.F90(435): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [PWGHT]
+ &                       KLIVE,KDX,KDY,KFERT,KCELL,PFERTIN,PCELLIN,PWGHT,PRAND1D,LD_ADVECT)
+-------------------------------------------------------------------^
+mem=57984kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoegwd.F90
+mem=24016kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoegwwms.F90
+mem=19232kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoethf.F90
+yoethf.F90(102): warning #6178: The return value of this FUNCTION has not been defined.   [YDTHF]
+TYPE (TTHF) FUNCTION TTHF_INIT () RESULT (YDTHF)
+------------------------------------------^
+mem=24352kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./model_physics_ecmwf_mod.F90
+mem=21832kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoephli.F90
+mem=24236kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomcumfs.F90
+mem=24208kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoegwdwms.F90
+mem=19032kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoecumf2.F90
+mem=24084kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yophlc.F90
+mem=24000kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yophnc.F90
+mem=23920kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomncl.F90
+mem=23056kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomsrftlad.F90
+mem=24060kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomsphyhist.F90
+mem=23612kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./model_physics_simplinear_mod.F90
+mem=24872kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoeaerlid.F90
+mem=24372kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoeaermap.F90
+mem=24108kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoeaersnk.F90
+mem=24552kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoeaersrc.F90
+mem=24340kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoeaervol.F90
+mem=24384kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoedbug.F90
+mem=23328kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./model_physics_aerosol_mod.F90
+mem=24556kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomrandom_streams.F90
+mem=18384kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./stoph_mix.F90
+stoph_mix.F90(344): warning #6178: The return value of this FUNCTION has not been defined.   [NEIGHBOUR_COUNT]
+FUNCTION NEIGHBOUR_COUNT(KCOL,KROW,KCELLS,KIIP,KJJP)
+---------^
+stoph_mix.F90(366): warning #6178: The return value of this FUNCTION has not been defined.   [FERTILE_NEIGHBOUR_COUNT]
+FUNCTION FERTILE_NEIGHBOUR_COUNT(KCOL,KROW,KCELLS,KIIP,KJJP)
+---------^
+stoph_mix.F90(392): warning #6178: The return value of this FUNCTION has not been defined.   [SIGTOFACT]
+FUNCTION SIGTOFACT(PSIG)
+---------^
+stoph_mix.F90(551): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [PSM]
+SUBROUTINE SPNORMEI(YDLAP,YDDIM,PX,PXFORC,PSM,KLEV)
+------------------------------------------^
+mem=39316kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./model_physics_stochast_mod.F90
+mem=24736kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomdprecips.F90
+mem=18516kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomdvisi.F90
+mem=23316kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomcape.F90
+mem=22580kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomphy.F90
+mem=24604kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomphy0.F90
+mem=20304kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomphy1.F90
+mem=19256kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomphy2.F90
+mem=23696kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomphy3.F90
+mem=19112kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomphyds.F90
+mem=18772kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomcvmnh.F90
+mem=22480kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomtoph.F90
+mem=18628kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomvdoz.F90
+mem=18508kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomsimphl.F90
+mem=23372kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomarphy.F90
+mem=23444kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomparar.F90
+mem=23696kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yommse.F90
+mem=23544kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomlouis.F90
+mem=23808kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomnorgwd.F90
+mem=18476kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./model_physics_mf_mod.F90
+mem=29496kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomozo.F90
+mem=22488kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomchem.F90
+mem=18824kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./model_chem_mod.F90
+mem=19640kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomcddh.F90
+mem=23368kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomlddh.F90
+mem=18444kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yommddh.F90
+mem=22976kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomsddh.F90
+mem=23296kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomtddh.F90
+mem=23520kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomgpddh.F90
+mem=18472kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yompaddh.F90
+mem=23360kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomspddh.F90
+mem=18532kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./model_diagnostics_mod.F90
+mem=25396kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yoewcou.F90
+mem=19388kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomdfi.F90
+mem=23620kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomini.F90
+mem=18244kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yemlbc_model.F90
+mem=46052kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./type_model.F90
+mem=74160kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./field_registry_mod.F90
+mem=246348kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomcli.F90
+mem=18720kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./field_definitions_base.F90
+field_definitions_base.F90(181): warning #6178: The return value of this FUNCTION has not been defined.   [GETFID]
+FUNCTION GETFID(FVAR,CDNAME)
+---------^
+mem=20896kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./field_definitions.F90
+field_definitions.F90(1144): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [KLEVELTYPES]
+subroutine main_field_set_metadata(this,metadata,kleveltypes,kdim3types)
+-------------------------------------------------^
+field_definitions.F90(1144): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [KDIM3TYPES]
+subroutine main_field_set_metadata(this,metadata,kleveltypes,kdim3types)
+-------------------------------------------------------------^
+mem=36976kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./field_gfl_wrapper.F90
+field_gfl_wrapper.F90(97): warning #6178: The return value of this FUNCTION has not been defined.   [GFL_MAP]
+FUNCTION GFL_MAP(YDMAP,KID, KATTACH, LD_IGNORE_NOT_SET)
+---------^
+field_gfl_wrapper.F90(125): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [KFIELDS_USED]
+SUBROUTINE GFL_FID_SETUP(YDMAP,KFIELDS_ALL, KATTACH, KFIELDS_USED, LDON, LDACTIVE,KFIDS_USED,KFIDS)
+-----------------------------------------------------^
+field_gfl_wrapper.F90(179): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [KMAP]
+SUBROUTINE SET_MAP(FVAR,KMAP,KFID,KTO,LDFIRST,YDGFLC,YDSURF,KFIELDS,KMAPFIELDS)
+------------------------^
+mem=38880kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./field_container_base_mod.F90
+field_container_base_mod.F90(59): warning #6178: The return value of this FUNCTION has not been defined.   [FIELD_ACTIVE_CONTAINER]
+FUNCTION FIELD_ACTIVE_CONTAINER(SELF,KFID)
+---------^
+field_container_base_mod.F90(156): warning #6178: The return value of this FUNCTION has not been defined.   [GET_STORE_TYPE]
+FUNCTION GET_STORE_TYPE(SELF)
+---------^
+mem=29840kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./field_container_gp_mod.F90
+field_container_gp_mod.F90(454): warning #6178: The return value of this FUNCTION has not been defined.   [FIELD_ITERATED]
+FUNCTION FIELD_ITERATED(SELF, KFIDS, KBLOCK, FAC,LDHDERS,KOTID,KBLOCK_SIZE,FVAR)
+---------^
+field_container_gp_mod.F90(623): warning #6178: The return value of this FUNCTION has not been defined.   [FIELD_NBLOCKS]
+FUNCTION FIELD_NBLOCKS(SELF)
+---------^
+field_container_gp_mod.F90(635): warning #6178: The return value of this FUNCTION has not been defined.   [FIELD_BLOCK_SIZE]
+FUNCTION FIELD_BLOCK_SIZE(SELF,KBLOCK)
+---------^
+field_container_gp_mod.F90(808): warning #6178: The return value of this FUNCTION has not been defined.   [KINDEX_OLD]
+FUNCTION KINDEX_OLD(SELF,KFID,KATTACH)
+---------^
+field_container_gp_mod.F90(226): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [ACCESS_CONTROL]
+SUBROUTINE FIELD_OPEN_COMMON(SELF, ACCESS_CONTROL, KFIELDS, KFIDS, KBLOCK, KBLOCK_SIZE)
+-----------------------------------^
+mem=105756kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./variables_mod.F90
+variables_mod.F90(94): warning #6178: The return value of this FUNCTION has not been defined.   [HAS_MODEL_FIELDS]
+LOGICAL FUNCTION HAS_MODEL_FIELDS(SELF)
+-----------------^
+variables_mod.F90(103): warning #6178: The return value of this FUNCTION has not been defined.   [HAS_OLD_FIELDS]
+LOGICAL FUNCTION HAS_OLD_FIELDS(SELF)
+-----------------^
+variables_mod.F90(112): warning #6178: The return value of this FUNCTION has not been defined.   [IS_LINEAR]
+LOGICAL FUNCTION IS_LINEAR(SELF)
+-----------------^
+mem=24376kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./field_container_sp_mod.F90
+field_container_sp_mod.F90(153): warning #6178: The return value of this FUNCTION has not been defined.   [FIELD_ITERATED]
+FUNCTION FIELD_ITERATED(SELF, ITERATOR,KFIDS, FIELD_1D, FIELD_2D,KOTID)
+---------^
+mem=25000kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./fields_base_mod.F90
+fields_base_mod.F90(467): warning #6178: The return value of this FUNCTION has not been defined.   [INTREST]
+FUNCTION INTREST(KSOURCE,KREMOVE)
+---------^
+fields_base_mod.F90(232): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [PDOTP]
+SUBROUTINE FIELDS_L2_NORM(SELF,PDOTP)
+-------------------------------^
+fields_base_mod.F90(217): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [PDOTP]
+SUBROUTINE FIELDS_DOT_PROD(SELF,RHS,PDOTP)
+------------------------------------^
+fields_base_mod.F90(246): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [PNORM]
+SUBROUTINE FIELDS_NORM(SELF,CDGREP,PNORM,KFIDS)
+-----------------------------------^
+mem=391268kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./pardim.F90
+mem=22376kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./type_fluxes.F90
+mem=19840kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./ptrgfu_type.F90
+mem=23564kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./ptrgfu.F90
+mem=23276kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomcfu_type.F90
+mem=34124kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomcfu.F90
+mem=28088kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./ptrxfu_type.F90
+mem=23580kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./ptrxfu.F90
+mem=23296kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomct1.F90
+mem=23360kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomxfu_type.F90
+mem=44904kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomxfu.F90
+mem=25592kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yommcuf.F90
+mem=23664kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomfpcnt.F90
+mem=23572kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./type_fpusergeo.F90
+mem=24008kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomfpgeo.F90
+mem=22604kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomfpgind.F90
+mem=23428kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomfpgeometry.F90
+yomfpgeometry.F90(45): warning #6178: The return value of this FUNCTION has not been defined.   [LFPOSBUF]
+LOGICAL FUNCTION LFPOSBUF(YDFPGEOMETRY)
+-----------------^
+yomfpgeometry.F90(54): warning #6178: The return value of this FUNCTION has not been defined.   [LFPDISTRIB]
+LOGICAL FUNCTION LFPDISTRIB(YDFPGEOMETRY)
+-----------------^
+mem=25008kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomfpfilters.F90
+mem=23444kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomwfpb.F90
+mem=18660kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./parfpos.F90
+mem=23524kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./fullpos_mix.F90
+mem=24252kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./type_fpdsphys.F90
+mem=24948kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomafn.F90
+mem=29368kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomfpios.F90
+mem=23500kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./type_faoph.F90
+mem=23348kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./type_fpofn.F90
+mem=20356kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomfpop.F90
+mem=23456kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./types_fpcat.F90
+mem=23996kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomfpc.F90
+mem=24820kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomfp4l.F90
+yomfp4l.F90(63): warning #6178: The return value of this FUNCTION has not been defined.   [IFPSEARCH]
+INTEGER(KIND=JPIM) FUNCTION IFPSEARCH(YDTYPE,KCOD)
+----------------------------^
+mem=24564kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./type_fposbuf.F90
+mem=23620kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./fullpos.F90
+mem=28188kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yemlbc_fields.F90
+mem=29268kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./fields_mod.F90
+fields_mod.F90(444): warning #6843: A dummy argument with an explicit INTENT(OUT) declaration is not given an explicit value.   [PPROD]
+SUBROUTINE FIELDS_DOT_PROD(FLD1,FLD2,PPROD)
+-------------------------------------^
+mem=739180kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomlsforc.F90
+mem=23240kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomnud.F90
+mem=23964kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomrip0.F90
+mem=23316kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./yomsnu.F90
+mem=23692kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./cpg_opts_type_mod.F90
+mem=291228kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./mf_phys_type_mod.F90
+mem=252640kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./ddh_mix.F90
+mem=29808kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./cpg_type_mod.F90
+mem=303944kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./surface_views_diagnostic_module.F90
+mem=123440kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./surface_views_prognostic_module.F90
+mem=122012kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./surface_views_module.F90
+mem=23948kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./mf_phys_surface_type_mod.F90
+mem=176980kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./mf_phys_base_state_type_mod.F90
+mem=184900kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./mf_phys_next_state_type_mod.F90
+mem=175376kb
+/usr/bin/time -f 'mem=%Mkb' ifort -g -O0  -c ./apl_arpege.F90
+mem=1059440kb

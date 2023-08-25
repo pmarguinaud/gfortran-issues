@@ -1,4 +1,4 @@
-include Makefile.inc
+include Makefile.$(ARCH)
 
 ./apl_arpege.intfb.ok: $(SRC)/./apl_arpege.intfb.h geometry_mod.o mf_phys_type_mod.o cpg_type_mod.o cpg_opts_type_mod.o mf_phys_surface_type_mod.o field_variables_mod.o mf_phys_base_state_type_mod.o mf_phys_next_state_type_mod.o type_model.o parkind1.o yomhook.o ddh_mix.o
 	touch ./apl_arpege.intfb.ok

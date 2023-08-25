@@ -1,0 +1,3 @@
+SRC=.
+FC=/usr/bin/time -f 'mem=%Mkb' ifort -g -O0 
+all: apl_arpege.o
